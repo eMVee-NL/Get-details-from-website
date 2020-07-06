@@ -15,15 +15,17 @@ if len (sys.argv) != 2 :
 
 
 print ("#########################################################")
-print ("# Running script: ", sys.argv[0], "                        #")
+print ("# Running script: ", sys.argv[0], "             #")
 print ("# This script is created by Matthijs van der Vaart      #")
 print ("#########################################################")
 print ()
 url = sys.argv[1]
 #url=input()
 
+
 # Make a GET request to fetch the raw HTML content
-html_content = requests.get(url).text
+agent = {"User-Agent":"Mozilla/5.0"}
+html_content = requests.get(url, headers=agent).text
 
 # Parse the html content
 soup = BeautifulSoup(html_content, "lxml")
