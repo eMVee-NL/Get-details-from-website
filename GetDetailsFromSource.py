@@ -2,7 +2,7 @@
 # To use this script, the following should be installed on the system: requests beautifulsoup4 lxml
 # To install the required software you should run the command wirtten below
 # pip3 install requests beautifulsoup4 lxml
-# To run this scrpit you have to run it like GetSource.py https://www.website.com or GetSource.py http://www.website.com
+# To run this script you have to run it like GetDetailsFromSource.py.py https://www.website.com or GetDetailsFromSource.py.py http://www.website.com
 
 # importing the libraries
 import requests
@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 from bs4 import Comment
 import sys
 if len (sys.argv) != 2 :
-    print ("Usage: python GetSource.py https://www.website.com or GetSource.py http://www.website.com ")
+    print ("Usage: python", sys.argv[0], " https://www.website.com or ", sys.argv[0], " http://www.website.com")
     sys.exit (1)
 
 
