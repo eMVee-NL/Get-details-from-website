@@ -2,7 +2,7 @@
 # To use this script, the following should be installed on the system: requests beautifulsoup4 lxml
 # To install the required software you should run the command wirtten below
 # pip3 install requests beautifulsoup4 lxml
-# To run this script you have to run it like GetDetailsFromSource.py.py https://www.website.com or GetDetailsFromSource.py.py http://www.website.com
+# To run this script you have to run it like python3 GetDetailsFromSource.py.py https://www.website.com or GetDetailsFromSource.py.py http://www.website.com
 
 # importing the libraries
 import requests
@@ -13,7 +13,6 @@ if len (sys.argv) != 2 :
     print ("Usage: python", sys.argv[0], " https://www.website.com or ", sys.argv[0], " http://www.website.com")
     sys.exit (1)
 
-
 print ("#########################################################")
 print ("# Running script: ", sys.argv[0], "             #")
 print ("# This script is created by Matthijs van der Vaart      #")
@@ -21,7 +20,6 @@ print ("#########################################################")
 print ()
 url = sys.argv[1]
 #url=input()
-
 
 # Make a GET request to fetch the raw HTML content
 agent = {"User-Agent":"Mozilla/5.0"}
@@ -36,17 +34,10 @@ print ("#########################################################")
 print ("# The title of the webpage                              #")
 print ("#########################################################")
 print ()
-print ()
-print ("#########################################################")
-print ("# The title of the webpage                              #")
-print ("#########################################################")
-print ()
 try:
     print ("Title of webpage: ", soup.title.text)
 except:
     print ("An exception occurred, the title cannot be found!") 
-
-
 
 #Print meta data description
 print ()
@@ -59,7 +50,6 @@ for tag in meta:
 	if 'name' in tag.attrs.keys() and tag.attrs['name'].strip().lower() in ['description', 'keywords']:
 		print ('Name    :',tag.attrs['name'].lower())
 		print ('Content :',tag.attrs['content'])
-
 
 #Print all comments in the source code
 print ()
@@ -86,7 +76,6 @@ for link in soup.find_all("a"):
     print ("Title: {}".format(link.get("title")))
     print ("Href: {}".format(link.get("href")))
     print ("===========")
-
 
 #Enable option below if all source code should be printed
 #print (soup.prettify()) # print the parsed data of html
