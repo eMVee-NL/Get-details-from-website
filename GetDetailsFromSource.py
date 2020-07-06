@@ -36,7 +36,17 @@ print ("#########################################################")
 print ("# The title of the webpage                              #")
 print ("#########################################################")
 print ()
-print ("Title of webpage: ", soup.title.text)
+print ()
+print ("#########################################################")
+print ("# The title of the webpage                              #")
+print ("#########################################################")
+print ()
+try:
+    print ("Title of webpage: ", soup.title.text)
+except:
+    print ("An exception occurred, the title cannot be found!") 
+
+
 
 #Print meta data description
 print ()
