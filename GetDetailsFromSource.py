@@ -47,7 +47,7 @@ print ("#########################################################")
 print ()
 meta = soup.find_all('meta')
 for tag in meta:
-	if 'name' in tag.attrs.keys() and tag.attrs['name'].strip().lower() in ['description', 'keywords']:
+	if 'name' in tag.attrs.keys() and tag.attrs['name'].strip().lower() in ['description', 'keywords', 'generator']:
 		print ('Name    :',tag.attrs['name'].lower())
 		print ('Content :',tag.attrs['content'])
 
