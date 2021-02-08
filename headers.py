@@ -11,4 +11,4 @@ def printing_headers(url):
         print ('\t' + x + ' : ' + r.headers[x])
     print ("**********************************\n")
 
-#HTTPSConnectionPool(host='www.sogeti.nl', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')])")))
+#HTTPSConnectionPool(host='www.domainname.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')])")))
