@@ -9,7 +9,7 @@ At this moment the following information is collected
 - Comments
 
 ## Install some requirements
-Run: `pip3 install - r requirements.txt`
+Run: `pip3 install -r requirements.txt`
 
 ## Usage
 Run in the terminal `python3 ITechnology.py -u http://www.website.com`
