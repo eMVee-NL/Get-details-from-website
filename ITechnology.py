@@ -5,6 +5,7 @@ from headers import *
 from hyperlinks import *
 from comments import *
 from metadata import *
+from getEmail import *
   
 def usage():
     print ("Usage:")
@@ -28,6 +29,7 @@ def start(argv):
             print ("Target is set to: " + url + "\n")
             printing_headers(url)
             displayMetaData(url)
+            displayEmail(url)
             displayHyperlinks(url)
             displayComments(url)
 
