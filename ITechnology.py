@@ -2,6 +2,7 @@ import sys
 import getopt
 from banner import *
 from createProjectDirectory import createProjectDirectory
+from getRobots import getRobots
 from headers import *
 from hyperlinks import *
 from comments import *
@@ -10,7 +11,7 @@ from metadata import *
 def usage():
     print ("Usage:")
     print ("\t-u: url (http://www.website.com)\n")
-    print ("example: python3 itechnology.py -u http://www.website.com\n")
+    print ("example: python3 ITechnology.py -u http://www.website.com\n")
 
 def start(argv):
     #Display banner
@@ -28,6 +29,7 @@ def start(argv):
             url = arg
             print ("Target is set to: " + url + "\n")
             createProjectDirectory(url)
+            getRobots(url)
             printing_headers(url)
             displayMetaData(url)
             displayHyperlinks(url)
