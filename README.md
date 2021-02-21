@@ -2,6 +2,7 @@
 This script is written to extract some parts of the source code of the target website. In the near future I will work on updates to identify some information from headers and responses. Any suggestions and cowork are appreciated.
 
 At this moment the following information is collected
+- robots.txt file
 - HTTP response headers
 - Metadata of the website
 - Email addresses (which are not obfuscated)
