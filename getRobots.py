@@ -18,7 +18,7 @@ def getRobots(url):
     url = url
     file = "/robots.txt"
     workingDirectory = (url.split('//www.')[1])
-    os.chdir('Collected-Data/'+ workingDirectory)
+    os.chdir(workingDirectory)
     time.sleep(1)
     print ("Trying to get the robots.txt file from: " + url)
     response = requests.get(url+file)
