@@ -10,7 +10,11 @@ At this moment the following information is collected
 - Comments
 
 ## Install some requirements
-Run: `pip3 install -r requirements.txt`
+Run: `pip3 install -r requirements.txt`    
+   To succesfully take screenshot of a webpage the following should be performed. Be aware that during the copy  action the sudo password is asked. 
+PS. don't trust any script and check the script before editing and using. :smile:   
+Execture: `chmod +x install-GeckoDriver.sh`   
+Run: `./install-GeckoDriver.sh`   
 
 ## Usage
 Run in the terminal `python3 ITechnology.py -u http://www.website.com`
