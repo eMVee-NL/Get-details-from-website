@@ -3,6 +3,7 @@ This script is written to extract some parts of the source code of the target we
 
 At this moment the following information is collected
 - robots.txt file
+- Create a screenshot of the webpage
 - HTTP response headers
 - Metadata of the website
 - Email addresses (which are not obfuscated)
