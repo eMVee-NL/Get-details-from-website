@@ -7,6 +7,7 @@ from headers import *
 from hyperlinks import *
 from comments import *
 from metadata import *
+from takeScreenshot import*
   
 def usage():
     print ("Usage:")
@@ -29,12 +30,12 @@ def start(argv):
             url = arg
             print ("Target is set to: " + url + "\n")
             createProjectDirectory(url)
+            takeScreenshot(url)
             getRobots(url)
             printing_headers(url)
             displayMetaData(url)
             displayHyperlinks(url)
             displayComments(url)
-
 
 if __name__ == "__main__":
     try:

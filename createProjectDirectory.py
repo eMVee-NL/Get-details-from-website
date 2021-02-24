@@ -17,7 +17,7 @@ def createProjectDirectory(url):
         url = url
         url = (url.split('//www.')[1])
         os.mkdir(url)
-        print("Collected data will be written to directory Collected-Data\\"+url)
+        print("Collected data will be written to directory Collected-Data/" + url)
     except FileExistsError:
         pass
     except Exception:
