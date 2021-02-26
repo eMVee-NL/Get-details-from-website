@@ -17,5 +17,3 @@ def takeScreenshot(url):
     print ("Took a screenshot of the webpage: " + url)
     print ("Saved the file to: Collected-Data/" + domain + "/" + filename)
     print ("**********************************\n")
-
-takeScreenshot('https://www.bartosz.nl')
