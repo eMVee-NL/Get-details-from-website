@@ -2,6 +2,7 @@
 This script is written to extract some parts of the source code of the target website. In the near future I will work on updates to identify some information from headers and responses. Any suggestions and cowork are appreciated.
 
 At this moment the following information is collected
+- IP address belonging to the website (domain)
 - robots.txt file
 - Create a screenshot of the webpage
 - HTTP response headers
@@ -21,6 +22,7 @@ Run: `./install-GeckoDriver.sh`
 Run in the terminal `python3 ITechnology.py -u http://www.website.com`
 
 ## To do list
+- Working on the -l (list in a file) option to run multiple wwebsites (sub)domains
 - Working on HTTP responses to get important details in a kind of summery
 - Maybe a phone number scraper
 - Maybe a check for hyperlinks (working on an idea)
