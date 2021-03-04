@@ -14,19 +14,23 @@ def readRobots(filename):
     except:
         print ("Something went wrong!")
 
-def getRobots(url):
+def getRobots(url, website):
     url = url
     file = "/robots.txt"
-    workingDirectory = (url.split('//www.')[1])
+    workingDirectory = (website)
     os.chdir(workingDirectory)
     time.sleep(1)
     print ("Trying to get the robots.txt file from: " + url)
-    response = requests.get(url+file)
-    if(response.status_code == 200):
-        time.sleep(1)
-        print ("The robots.txt file has been found on: " + url)
-        print ("Trying to download: " +url + file)
-        time.sleep(1)
-        filename = wget.download(url + file)
-        readRobots(filename)
-        print ("**********************************\n")
+    try:
+        response = requests.get(url+file)
+        if(response.status_code == 200):
+            time.sleep(1)
+            print ("The robots.txt file has been found on: " + url)
+            print ("Trying to download: " +url + file)
+            time.sleep(1)
+            filename = wget.download(url + file)
+            readRobots(filename)
+            print ("**********************************\n")
+    except requests.exceptions.ConnectionError:
+        print("Connection refused! The robots.txt file could not be downloaded")
+

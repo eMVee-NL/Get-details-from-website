@@ -1,44 +1,55 @@
-import sys
-import getopt
+#!/usr/bin/env python3
+import sys, os, shutil
 from banner import *
-from createProjectDirectory import createProjectDirectory
-from getRobots import getRobots
-from headers import *
-from hyperlinks import *
-from comments import *
-from metadata import *
-from takeScreenshot import*
-  
+from checkURL import checkURL
+
+if sys.version_info < (3, 0):
+    sys.stdout.write("Sorry, ITechnology requires Python 3.x\n")
+    sys.exit(1)
+
+def runTheProgram(path, url):
+    checkURL(path, url)
+
+def openFile(filename):
+    print("Open File " + filename)
+    print("This function is not yet developed!")
+    #runTheProgram(name)
+
 def usage():
     print ("Usage:")
-    print ("\t-u: url (http://www.website.com)\n")
-    print ("example: python3 ITechnology.py -u http://www.website.com\n")
+    print ("\t-h: help")
+    print ("\t-u: url (http://www.website.com)")
+    print ("\t-l: list (list.txt)\n")
+    print ("example: python3 ITechnology.py -u http://www.website.com")
+    print ("example: python3 ITechnology.py -l list.txt\n")
 
-def start(argv):
-    #Display banner
+def removePyCache(path):
+    directory = "__pycache__"
+    path = path + "/"
+    try:
+        shutil.rmtree(path + directory)
+    except OSError as e:
+        print("Error: %s : %s" % (path + directory, e.strerror))
+
+def main():
     displayBanner()
-    if len(sys.argv) < 2:
+    args = sys.argv[1:]
+    path = os.path.abspath(os.curdir)
+    # check for the -u argument indicating to run against one website
+    if len(args) == 2 and args[0] == '-u':
+        runTheProgram(path, args[1])
+    # Check for the -l argument indicating to read the file line for line with domains
+    if len(args) == 2 and args[0] == '-l':
+        openFile(args[1])
+    # Check for -h argument to show options (help function)
+    if len(args) == 1 and args[0] == '-h':
         usage()
-        sys.exit()
-    try:
-        opts, args = getopt.getopt(argv, "u:")
-    except getopt.GetoptError:
-        print ("Error in arguments")
-        sys.exit()
-    for opt, arg in opts:
-        if opt == '-u':
-            url = arg
-            print ("Target is set to: " + url + "\n")
-            createProjectDirectory(url)
-            takeScreenshot(url)
-            getRobots(url)
-            printing_headers(url)
-            displayMetaData(url)
-            displayHyperlinks(url)
-            displayComments(url)
+    if len(args) == 0:
+        usage()
+    removePyCache(path)
+    
 
-if __name__ == "__main__":
-    try:
-        start(sys.argv[1:])
-    except KeyboardInterrupt:
-        print ("Session interrupted by user!!")
+
+# Run the whole thing.
+if __name__ == '__main__':
+    main()

@@ -4,3 +4,5 @@ lxml
 pyfiglet
 wget
 selenium
+validators
+tldextract
