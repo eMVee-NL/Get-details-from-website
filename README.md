@@ -1,6 +1,9 @@
 # Get details from website
 This script is written to extract some parts of the source code of the target website. In the near future I will work on updates to identify some information from headers and responses. Any suggestions and cowork are appreciated.
 
+The collected data can be found in the directory: "Collected-data/website"
+For each website a working directory will be created.
+
 At this moment the following information is collected
 - IP address belonging to the website (domain)
 - robots.txt file
@@ -10,6 +13,7 @@ At this moment the following information is collected
 - Email addresses (which are not obfuscated)
 - Hyperlinks
 - Comments
+
 
 ## Install some requirements
 Run: `pip3 install -r requirements.txt`    
