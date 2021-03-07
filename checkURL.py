@@ -52,4 +52,9 @@ def checkURL(path, url):
             hostname = ext.registered_domain
             getAllData(hostname, url, path)
     else:
-        print(url + "is an invalid url")
+        print(url + " is an invalid url")
+
+
+
+path = os.path.abspath(os.curdir)
+checkURL(path, 'www.9292.nl')
