@@ -19,14 +19,22 @@ At this moment the following information is collected
 Run: `pip3 install -r requirements.txt`    
    To succesfully take screenshot of a webpage the following should be performed. Be aware that during the copy  action the sudo password is asked. 
 PS. don't trust any script and check the script before editing and using. :smile:   
-Execture: `chmod +x install-GeckoDriver.sh`   
+Run: `chmod +x install-GeckoDriver.sh`   
 Run: `./install-GeckoDriver.sh`   
 
 ## Usage
-Run in the terminal `python3 ITechnology.py -u http://www.website.com`
+Run in the terminal `python3 ITechnology.py -u http://www.website.com`   
+   
+A second option is to run `python3 ITechnology.py -l filename.txt`    
+All the websites within the file should start with **http://** or **https://**, otherwise the URL could not be validated and it will turn to invalid.   
+One website must be used per line, for example:    
+```
+http://www.website.com    
+https://website.com    
+http://subdomain.website.com    
+```
 
 ## To do list
-- Working on the -l (list in a file) option to run multiple wwebsites (sub)domains
 - Working on HTTP responses to get important details in a kind of summery
 - Maybe a phone number scraper
 - Maybe a check for hyperlinks (working on an idea)
