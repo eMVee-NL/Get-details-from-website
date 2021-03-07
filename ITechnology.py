@@ -10,18 +10,24 @@ if sys.version_info < (3, 0):
 def runTheProgram(path, url):
     checkURL(path, url)
 
-def openFile(filename):
-    print("Open File " + filename)
-    print("This function is not yet developed!")
-    #runTheProgram(name)
+def openFile(path, filename):
+    path = path
+    filename = filename
+    sites = []
+    with open(filename) as f:
+        lines = [line.rstrip() for line in f]
+        for website in lines:
+            if website not in sites:
+                sites.append(website)
+                runTheProgram(path, website)
 
 def usage():
-    print ("Usage:")
-    print ("\t-h: help")
-    print ("\t-u: url (http://www.website.com)")
-    print ("\t-l: list (list.txt)\n")
-    print ("example: python3 ITechnology.py -u http://www.website.com")
-    print ("example: python3 ITechnology.py -l list.txt\n")
+    print("Usage:")
+    print("\t-h: help")
+    print("\t-u: url (http://www.website.com)")
+    print("\t-l: list (list.txt)\n")
+    print("example: python3 ITechnology.py -u http://www.website.com")
+    print("example: python3 ITechnology.py -l list.txt\n")
 
 def removePyCache(path):
     directory = "__pycache__"
@@ -40,7 +46,7 @@ def main():
         runTheProgram(path, args[1])
     # Check for the -l argument indicating to read the file line for line with domains
     if len(args) == 2 and args[0] == '-l':
-        openFile(args[1])
+        openFile(path, args[1])
     # Check for -h argument to show options (help function)
     if len(args) == 1 and args[0] == '-h':
         usage()
@@ -48,8 +54,6 @@ def main():
         usage()
     removePyCache(path)
     
-
-
 # Run the whole thing.
 if __name__ == '__main__':
     main()
