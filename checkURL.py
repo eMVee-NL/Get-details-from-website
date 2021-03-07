@@ -53,8 +53,3 @@ def checkURL(path, url):
             getAllData(hostname, url, path)
     else:
         print(url + " is an invalid url")
-
-
-
-path = os.path.abspath(os.curdir)
-checkURL(path, 'www.9292.nl')
